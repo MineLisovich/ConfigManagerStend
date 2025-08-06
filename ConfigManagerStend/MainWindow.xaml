@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConfigManagerStend"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Конфигуратор JSON файлов" Height="450" Width="800">
     <Grid>
+        <StackPanel Margin="10">
+            <!-- Поле для выбора JSON-файла -->
+            <Label Content="Выберите JSON файл:"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="jsonFilePathTextBox" Width="300" IsReadOnly="True"/>
+                <Button Content="Обзор..." Margin="5,0,0,0" Click="BrowseJsonFile_Click"/>
+            </StackPanel>
 
+            <!-- Поле для выбора каталога -->
+            <Label Content="Путь до папки Debug:" Margin="0,10,0,0"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="directoryPathTextBox" Width="300" IsReadOnly="True"/>
+                <Button Content="Обзор..." Margin="5,0,0,0" Click="BrowseDirectory_Click"/>
+            </StackPanel>
+            <Button x:Name="substitutionBtn" Width="200" Height="30" Content="Подменить фаайл"
+   Click="SubstitutionBtn_Click" HorizontalAlignment="Left" Margin="28,197,0,207"/>
+        </StackPanel>
+       
     </Grid>
 </Window>
